@@ -6,9 +6,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        Products product1= new Products("laptop",1100);
+        Products product1= new Products("Laptop",1100);
         Products product2= new Products("Speaker",440);
-        Products product3= new Products("mouse",45);
+        Products product3= new Products("Mouse",45);
 
         List<Products> productsList = new ArrayList<>();
 
@@ -18,18 +18,15 @@ public class Main {
 
         ExchangeRateCalculatorShop currentExchange = new ExchangeRateCalculatorShop(new WebExchangeRateService());
 
-        {System.out.println(currentExchange.convertCurrency(200, "USD","EUR"));}
+        // {System.out.println(currentExchange.convertCurrency(200, "USD","EUR")); }
 
-        for(int i=0, ){;}
-
-
-        /*productsList.forEach(
-                x->System.out.println("Product : "+x.getName()+ " cost USD "+ x.getPrice() +
-                "\n"+ " The result in EUR is: "+ currentExchange.convertCurrency(x.getPrice(), "USD","EUR")+
-                "\n"+ " The result in GPT is: "+currentExchange.convertCurrency(x.getPrice(), "USD","GPT")
-                )
-        );*/
+        if(productsList.size()!= 0) {
+            for (Products products : productsList) {
+                System.out.print("The product " + products.getName() + " cost USD " + products.getPrice());
+                System.out.print("\t"+currentExchange.convertCurrency(products.getPrice(), "USD", "EUR") + " EUR ");
+                System.out.print("\t"+currentExchange.convertCurrency(products.getPrice(), "USD", "GBP") + " GBP "+ "\n");
+            }
+        }
     }
-
 
 }

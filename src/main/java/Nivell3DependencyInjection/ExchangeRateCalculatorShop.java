@@ -17,5 +17,7 @@ public class ExchangeRateCalculatorShop {
         Map<String, Double> exchangeRates = converter.getExchangeRates();
         double rate = exchangeRates.get(toCurrency) / exchangeRates.get(fromCurrency);
         return amount * rate;
+
     }
 }
+
