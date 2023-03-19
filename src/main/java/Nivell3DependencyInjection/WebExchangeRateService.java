@@ -2,7 +2,10 @@ package Nivell3DependencyInjection;
 
 import java.util.Map;
 
-public class WebExchangeRateService implements ExchangeRateServices {
+public class WebExchangeRateService implements InterfaceExchangeRateServices {
+
+    public WebExchangeRateService() {
+    }
 
     public Map<String, Double> getExchangeRates() {
         Map<String, Double> exchangeRates = Map.of(
